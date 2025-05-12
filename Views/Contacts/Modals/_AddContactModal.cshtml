@@ -1,0 +1,38 @@
+<form id="addContactForm">
+    <div class="modal fade" id="addContactModal" tabindex="-1" aria-labelledby="addContactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addContactModalLabel">Новый контакт</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label" for="name">Имя</label>
+                        <input type="text" id="name" class="form-control" name="Name" required pattern="^[A-Za-zА-Яа-яЁё\s\-]{2,30}$" title="Имя должно содержать только буквы, пробелы или дефис и быть от 2 до 30 символов." placeholder="Введите имя">
+                        <div class="invalid-feedback" id="nameError"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="mobilePhone">Телефон</label>
+                        <input type="text" id="mobilePhone" class="form-control" name="MobilePhone" required pattern="^\+?\d{1,4}?[-.\s]?\(?\d{1,4}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}$" title="Неверный формат телефона." placeholder="Введите номер телефона">
+                        <div class="invalid-feedback" id="mobilePhoneError"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="jobTitle">Должность</label>
+                        <input type="text" id="jobTitle" class="form-control" name="JobTitle" required  pattern="^[A-Za-zА-Яа-яЁё0-9\s\-]{2,25}$" title="Должность должна содержать только буквы, цифры, пробелы и быть от 2 до 25 символов.">
+                        <div class="invalid-feedback" id="jobTitleError"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="birthDate">Дата рождения</label>
+                        <input type="date" id="birthDate" class="form-control" name="BirthDate" required pattern="^\d{4}-\d{2}-\d{2}$">
+                        <div id="birthDateError" class="invalid-feedback"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="submit" class="btn btn-success">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

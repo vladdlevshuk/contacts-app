@@ -1,0 +1,65 @@
+<form id="editContactForm">
+    <div class="modal fade" id="editContactModal" tabindex="-1" aria-labelledby="editContactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editContactModalLabel">Редактировать контакт</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label" for="editName">Имя</label>
+                        <input type="text"
+                               class="form-control"
+                               name="Name"
+                               id="editName"
+                               required
+                               pattern="^[A-Za-zА-Яа-яЁё\s\-]{2,30}$"
+                               title="Имя должно содержать только буквы, пробелы или дефис и быть от 2 до 30 символов."
+                               placeholder="Введите имя">
+                        <div class="invalid-feedback" id="nameError"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="editMobilePhone">Телефон</label>
+                        <input type="text"
+                               class="form-control"
+                               name="MobilePhone"
+                               id="editMobilePhone"
+                               required
+                               pattern="^\+?\d{1,4}?[-.\s]?\(?\d{1,4}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}$"
+                               title="Неверный формат телефона."
+                               placeholder="Введите номер телефона">
+                        <div class="invalid-feedback" id="mobilePhoneError"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="editJobTitle">Должность</label>
+                        <input type="text"
+                               class="form-control"
+                               name="JobTitle"
+                               id="editJobTitle"
+                               required
+                               pattern="^[A-Za-zА-Яа-яЁё0-9\s\-]{2,25}$"
+                               title="Должность должна содержать только буквы, цифры, пробелы и быть от 2 до 25 символов."
+                               placeholder="Введите должность">
+                        <div class="invalid-feedback" id="jobTitleError"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="editBirthDate">Дата рождения</label>
+                        <input type="date"
+                               class="form-control"
+                               name="BirthDate"
+                               id="editBirthDate"
+                               required
+                               pattern="^\d{4}-\d{2}-\d{2}$">
+                        <div id="birthDateError" class="invalid-feedback"></div>
+                    </div>
+                    <input type="hidden" name="Id" id="editContactId">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="submit" class="btn btn-success">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

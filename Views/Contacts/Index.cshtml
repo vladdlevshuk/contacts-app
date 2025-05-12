@@ -1,0 +1,61 @@
+@model ContactsApp.Models.ContactListView
+
+<h2 class="mb-3">Cписок контактов</h2>
+
+<button class="btn btn-secondary mb-3" data-bs-toggle="modal" data-bs-target="#addContactModal">
+    Добавить контакт
+</button>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Телефон</th>
+            <th>Должность</th>
+            <th>Дата рождения</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contact in Model.Contacts)
+        {
+            <tr>
+                <td>@contact.Name</td>
+                <td>@contact.MobilePhone</td>
+                <td>@contact.JobTitle</td>
+                <td>@contact.BirthDate.ToString("yyyy-MM-dd")</td>
+                <td>
+                    <button class="btn btn-secondary edit-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#editContactModal"
+                        data-id="@contact.Id"
+                        data-name="@contact.Name"
+                        data-mobile="@contact.MobilePhone"
+                        data-job="@contact.JobTitle"
+                        data-birth="@contact.BirthDate.ToString("yyyy-MM-dd")">
+                        Редактировать
+                    </button>
+                    <button class="btn btn-danger delete-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#deleteConfirmModal"
+                        data-id="@contact.Id"
+                        data-name="@contact.Name">
+                        Удалить
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@await Html.PartialAsync("_Pagination", Model)
+
+@await Html.PartialAsync("Modals/_AddContactModal")
+@await Html.PartialAsync("Modals/_EditContactModal")
+@await Html.PartialAsync("Modals/_DeleteConfirmModal")
+
+@section Scripts {
+    <script src="~/js/contacts/addContact.js"></script>
+    <script src="~/js/contacts/editContact.js"></script>
+    <script src="~/js/contacts/deleteContact.js"></script>
+}

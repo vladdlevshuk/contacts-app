@@ -106,3 +106,4 @@ E:\ContactsApp\ContactsApp\obj\Debug\net8.0\refint\ContactsApp.dll
 E:\ContactsApp\ContactsApp\obj\Debug\net8.0\ContactsApp.pdb
 E:\ContactsApp\ContactsApp\obj\Debug\net8.0\ContactsApp.genruntimeconfig.cache
 E:\ContactsApp\ContactsApp\obj\Debug\net8.0\ref\ContactsApp.dll
+E:\ContactsApp\ContactsApp\obj\Debug\net8.0\ContactsApp.sourcelink.json
